@@ -1,3 +1,14 @@
+/* selector globarl */
+* {
+  box-sizing: content-box;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
 .myli {
   background-color: rgb(255, 0, 0);
   color: rgb(3, 3, 3);
@@ -29,7 +40,7 @@ header {
 .contenido {
   background-color: brown;
   padding: 20px;
-  border: 5px solid rgb(101, 165, 42);
+  border: 30px solid rgb(101, 165, 42); /* border para poner borde de color */
 }
 
 .contenedor-con-imagen {
@@ -114,44 +125,248 @@ se usa para mostrar un texto. se pueden declara multiples valores separados por 
   border: 1px solid black;
   background-color: rgb(255, 255, 255);
 }
-.estrella {
-  margin: 50px 0;
-  position: relative;
-  display: block;
-  color: red;
-  width: 0px;
-  height: 0px;
-  border-right: 100px solid transparent;
-  border-bottom: 70px solid red;
-  border-left: 100px solid transparent;
-  transform: rotate(35deg);
-}
-.estrella1 {
-  border-bottom: 80px solid red;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  position: absolute;
-  height: 0;
-  width: 0;
-  top: -45px;
-  left: -65px;
-  display: block;
-  content: "";
-  transform: rotate(-35deg);
-}
-.estrella2 {
-  position: absolute;
-  display: block;
-  color: red;
-  top: 3px;
-  left: -105px;
-  width: 0px;
-  height: 0px;
-  border-right: 100px solid transparent;
-  border-bottom: 70px solid red;
-  border-left: 100px solid transparent;
-  transform: rotate(-70deg);
-  content: "";
+/*tamaños*/
+.tamano {
+  margin: 100px 20px;
+  height: 200px;
+  width: 200px;
+  background-color: black;
 }
 
-/*tamaños*/
+.tamano-hijo {
+  height: 25%;
+  width: 25%;
+  background-color: red;
+}
+
+.div-vh-vw {
+  height: 100vh;
+  width: calc(100vw - 70px);
+  background-color: rgb(0, 102, 255);
+}
+
+.punto {
+  height: 100pt;
+  width: 100pt;
+  background-color: rgb(161, 14, 88);
+}
+
+.div-rem {
+  height: 20rem;
+  width: 20rem;
+  background-color: green;
+} /* tamaño de la fuentec de todo
+html (documento) */
+
+.div-em {
+  height: 40em;
+  width: 40em;
+  background-color: violet;
+} /*tamaño de la fuente de elemento  raiz*/
+
+._contenedor {
+  background-color: red;
+  width: 500px;
+  height: 500px;
+}
+._contenido {
+  background-color: green;
+  width: 200px;
+  height: 200px;
+}
+._otrocontenido {
+  background-color: blue;
+  width: 150px;
+  height: 150px;
+}
+._contenido-grande {
+  height: 300px;
+  width: 400px;
+  background-color: chocolate;
+}
+.contenedor-de-bordes > div {
+  height: 100px;
+  width: 100px;
+  border-width: 5px;
+  border-style: dotted;
+  border-color: rgb(9, 10, 9);
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.borde-1 {
+  border-style: dashed !important;
+}
+.borde-2 {
+  border-style: double !important;
+}
+.borde-3 {
+  border-style: outset !important;
+}
+.borde-4 {
+  border-style: solid !important;
+}
+.borde-en-una-linea {
+  border: 1px solid red; /*  */
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+  margin-top: 20px;
+}
+/* Display */
+/* flex container (elemento que afectara no solo a si mismo tambien afectara a lo que contiene.
+
+sistema de elemento flexibles(flex), donde los elementeos html trabajan y se adaptan automaticamente.*/
+.flex-container {
+  display: flex; /* afecta lo que contienes el elemento */
+  flex-direction: row; /* direccion (column, roww, reverse, column revers, roww reverse */
+  flex-wrap: nowrap; /* define que los elementos dentro del contenedor puedan saltar a la siguiente fila o columna */
+  justify-content: center; /* alinear el contenido(star, center, */
+  font-size: 30px;
+  border: 1px solid black;
+  padding: 10px;
+  align-items: end;
+  height: 300;
+} /* flex item */
+.flex-container > div {
+  margin: 10px;
+  background-color: yellow;
+  padding: 20px;
+  width: 50px;
+  line-height: 70px;
+  height: 70 px;
+}
+
+.contenedor-perfecto {
+  display: flex;
+  background-color: beige;
+  height: 200px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+.contenido-perfecto {
+  display: flex;
+  background-color: green;
+  height: 100px;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* selector hijo */
+
+.flex-container-2 > div:nth-child(3) {
+  /* nth-child seudoclase, permite seleccionar elementos en funcion de su posicionde en grupo de elementos */
+  order: 3;
+  flex-grow: 1; /* cuanto crece elemento en comparacion con el resto */
+  background-color: brown;
+}
+.flex-container-2 > div:nth-child(2) {
+  order: 1;
+  flex-grow: 5;
+  background-color: rgb(83, 42, 165);
+}
+.flex-container-2 > div:nth-child(1) {
+  order: 2;
+  flex-grow: 5;
+  background-color: brown;
+}
+.flex-container-3 {
+  display: flex;
+  align-items: stretch;
+  background-color: white;
+}
+.flex-container-3 > div {
+  background-color: blue;
+  color: aqua;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 60px;
+}
+.flex-container-3 > div:nth-child(2) {
+  background-color: rgb(226, 73, 43);
+  width: 20px;
+  flex-shrink: 2;
+}
+
+/* flex-basic */
+/* Determina una longitud especifica */
+
+.flex-container-3 > div:nth-child(2) {
+  flex-basis: 200px;
+}
+
+/* Display Grid nos permite disponer elementos en 2 dimensiones a diferencia de flex que nos ayuda a disponer elementos en una dimension */
+
+.container-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+.item {
+  background-color: rgb(43, 189, 226);
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  border: 3px solid black;
+}
+.grid-columns {
+  grid-template-columns: repeat(
+    5,
+    1fr
+  ); /* repeat=repetir(cantiada, u.medida) acepta fr, px, % */
+}
+.grid-rows {
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.grid-rows-columns {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr); /* forma alternativa */
+}
+.primero {
+  grid-column-start: 1; /* desde donde comienza */
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+.estructura {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-areas:
+    "_header _header"
+    "_sidelbar _main"
+    "_footer _footer";
+  grid-template-rows: 80px 1fr 80px;
+  grid-template-columns: 200px 1fr;
+}
+._header {
+  grid-area: _header;
+  background-color: greenyellow;
+}
+._sidelbar {
+  grid-area: _sidelbar;
+  background-color: blueviolet;
+}
+._main {
+  grid-area: _main;
+  background-color: beige;
+}
+._footer {
+  grid-area: _footer;
+  background-color: aquamarine;
+}
+.responsivo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 2px solid rgb(226, 73, 43);
+  padding: 15px;
+  gap: 15px;
+}
+.responsivo > div {
+  background-color: aqua;
+  color: black;
+  padding: 30px;
+}
